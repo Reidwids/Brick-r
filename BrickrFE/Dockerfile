@@ -1,12 +1,13 @@
 FROM node:alpine
 
-WORKDIR /BrickrFE/app
+WORKDIR /code
 
 # install dependencies
-COPY package.json . /BrickrFE/app/
+COPY package.json . /code/
+COPY package-lock.json . /code/
 RUN npm install
 
-COPY . /BrickrFE/app/
+COPY . /code/
 
 EXPOSE 3000
 
